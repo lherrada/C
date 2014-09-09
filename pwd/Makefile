@@ -3,7 +3,7 @@ CFLAGS=-c -Wall
 
 all: mypwd
 
-mypwd: getcwd.o pwd.o
+mypwd: getcwd.o pwd.o getcwd.h 
 	$(GCC) -Wall -o $@ $^
 
 getcwd.o: getcwd.c 
