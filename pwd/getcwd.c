@@ -34,6 +34,15 @@ void shift_buffer(char *filename,char *buf) {
 }
 
 //All the magic occurs in getcwd.
+//The logic is as follows:
+//function finds out what is the i-node number of the current working directory (.) through the  call of function
+// getinode_number. Then it compares the root inode number and the just found inode number.
+//If it is the same , it means current working directory is '/' and function returns the array with the complete path of the 
+//current working directory.
+//If it not, it opens a directory stream of directory above (..) and scan for the name directory which corresponds to
+// the inode number in the previous step.
+// Finally it stores the found name in the buffer filename. 
+//
 
 
 char *getcwd(char *filename) {
