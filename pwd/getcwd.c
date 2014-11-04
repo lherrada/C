@@ -26,6 +26,11 @@ return root_d_i;
 //Logic is that as new directory names are being found from the inodes 
 //these names are pushed to the beginning of the array. Already stored names are 
 //shifted to the right.
+// Ex. directory /home/users/lherrada
+// First node found:  |lherrada|
+// Second node found: |users|lherrada
+// Third node found: |home|users|lherrada
+// Last node found (root): |/|home|users|lherrada
 
 void shift_buffer(char *filename,char *buf) {
  strcat(buf,"/");
